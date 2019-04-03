@@ -30,6 +30,12 @@ http
       return;
     }
 
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader(
+      "Access-Control-Allow-Methods",
+      "PUT,POST,GET,DELETE,OPTIONS"
+    );
+
     proxy.web(req, res, { target });
   })
   .listen(port, () => {
